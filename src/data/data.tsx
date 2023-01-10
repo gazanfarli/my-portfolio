@@ -77,7 +77,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: 'https://drive.google.com/file/d/1mI1vQX_eI19RYllDexztGz94O7bfKqN8/view?usp=sharing',
       text: 'Resume',
       primary: true,
       Icon: DownloadIcon,
@@ -357,7 +357,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/gazaanfarli'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/gazanfarli'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/gazanfar-gazanfarli-a843021aa/'},
   {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/qezenferlee/'},
   {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/qznfr14'},
