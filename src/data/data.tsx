@@ -24,7 +24,6 @@ import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
-import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
   About,
@@ -68,20 +67,13 @@ export type SectionId = typeof SectionId[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Gazanfar.`,
+  name: `I'm Gazanfar Gazanfarli.`,
   description: (
-    <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
+        I'm a Baku based <strong className="text-stone-100">Front End Developer</strong>, currently working
+        at <strong className="text-stone-100">Algorithmics Global</strong> helping build a modern, mobile-first 
+        web applications
       </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
-      </p>
-    </>
   ),
   actions: [
     {
@@ -102,10 +94,8 @@ export const heroData: Hero = {
  * About section
  */
 export const aboutData: About = {
-  profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  profileImageSrc: 'https://i.postimg.cc/9RdTLFb3/profile-Photo.jpg',
+  description: `I am very passionate about my work. I like to learn new things and put my knowledge into use. And i will take every opportunity to improve myself. Looking for a place where i can share my skills and be able to grow in terms of learning and gaining experience. As for me, there is no end of learning.`,
   aboutItems: [
     {label: 'Location', text: 'Baku, Azerbaijan', Icon: MapIcon},
     {label: 'Age', text: '21', Icon: CalendarIcon},
@@ -270,19 +260,19 @@ export const education: TimelineItem[] = [
     date: 'September 2022 - Ongoing',
     location: 'The Academy of Public Administration Under the President of the Respublic of Azerbaijan',
     title: 'Mathematical and Information Security of Economic Activity',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    content: <p>Ongoing</p>,
   },
   {
     date: 'September 2018 - January 2022',
     location: 'Azerbaijan State Oil and Industry University',
     title: "BSc in Computer Engineering",
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    content: <p>What I learnt in Computer Science: artificial intelligence, computer systems and networks, security, database systems, human computer interaction, vision and graphics, numerical analysis, programming languages, software engineering and theory of computing.</p>,
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'Februaruy 2021 - Present',
+    date: 'September 2022 - Present',
     location: 'Algorithmics Global',
     title: 'Web Developer',
     content: (
@@ -295,7 +285,7 @@ export const experience: TimelineItem[] = [
     ),
   },
   {
-    date: 'July 2020 - February 2021',
+    date: 'April 2022 - September 2022',
     location: 'Yelo Bank',
     title: 'PL/SQL Developer',
     content: (
