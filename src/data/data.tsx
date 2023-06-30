@@ -87,7 +87,7 @@ export const heroData: Hero = {
  * About section
  */
 export const aboutData: About = {
-  profileImageSrc: 'https://postimg.cc/Vr5wyVYM',
+  profileImageSrc: 'https://i.postimg.cc/gJH2ZCQM/IMG-2320.jpg',
   description: `I am very passionate about my work. I like to learn new things and put my knowledge into use. And i will take every opportunity to improve myself. Looking for a place where i can share my skills and be able to grow in terms of learning and gaining experience. As for me, there is no end of learning.`,
   aboutItems: [
     {label: 'Location', text: 'Baku, Azerbaijan', Icon: MapIcon},
