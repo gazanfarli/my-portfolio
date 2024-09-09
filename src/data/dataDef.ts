@@ -1,7 +1,7 @@
-import {StaticImageData} from 'next/image';
-import {FC, SVGProps} from 'react';
+import { StaticImageData } from 'next/image';
+import { FC, SVGProps } from 'react';
 
-import {IconProps} from '../components/Icon/Icon';
+import { IconProps } from '../components/Icon/Icon';
 
 export interface HomepageMeta {
   title: string;
@@ -86,7 +86,7 @@ export interface PortfolioItem {
 /**
  * Resume section
  */
-export interface TimelineItem {
+export interface TTimelineItem {
   date: string;
   location: string;
   title: string;
@@ -98,10 +98,10 @@ export interface TimelineItem {
  */
 export interface TestimonialSection {
   imageSrc?: string | StaticImageData;
-  testimonials: Testimonial[];
+  testimonials: TTestimonial[];
 }
 
-export interface Testimonial {
+export interface TTestimonial {
   image?: string;
   name: string;
   text: string;
@@ -112,7 +112,6 @@ export interface Testimonial {
  */
 export interface ContactSection {
   headerText?: string;
-  description: string;
   items: ContactItem[];
 }
 
