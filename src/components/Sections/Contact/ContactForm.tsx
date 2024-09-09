@@ -1,4 +1,6 @@
-import {FC, memo, useCallback, useMemo, useState} from 'react';
+import emailjs from '@emailjs/browser';
+import { FC, memo, useCallback, useMemo, useRef, useState } from 'react';
+import { toast } from 'react-toastify';
 
 interface FormData {
   name: string;
@@ -6,7 +8,15 @@ interface FormData {
   message: string;
 }
 
+const ENV = {
+  EMAIL_SERVICE_ID: process.env.EMAIL_SERVICE_ID as string,
+  EMAIL_TEMPLATE_ID: process.env.EMAIL_TEMPLATE_ID as string,
+  EMAIL_PUBLIC_KEY: process.env.EMAIL_PUBLIC_KEY as string,
+};
+
 const ContactForm: FC = memo(() => {
+  const notify = (msg: string) => toast(msg || 'Wow so easy!');
+
   const defaultData = useMemo(
     () => ({
       name: '',
@@ -18,33 +28,43 @@ const ContactForm: FC = memo(() => {
 
   const [data, setData] = useState<FormData>(defaultData);
 
+  const form = useRef<HTMLFormElement | null>(null);
+
   const onChange = useCallback(
     <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
-      const {name, value} = event.target;
+      const { name, value } = event.target;
 
-      const fieldData: Partial<FormData> = {[name]: value};
+      const fieldData: Partial<FormData> = { [name]: value };
 
-      setData({...data, ...fieldData});
+      setData({ ...data, ...fieldData });
     },
     [data],
   );
 
-  const handleSendMessage = useCallback(
-    async (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      /**
-       * This is a good starting point to wire up your form submission logic
-       * */
-      console.log('Data to send: ', data);
-    },
-    [data],
-  );
+  const handleSendMessage = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(ENV.EMAIL_SERVICE_ID, ENV.EMAIL_TEMPLATE_ID, form.current as string | HTMLFormElement, {
+        publicKey: ENV.EMAIL_PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          (e.target as HTMLFormElement).reset();
+          notify('Email sent successfully');
+        },
+        error => {
+          (e.target as HTMLFormElement).reset();
+          notify(error);
+        },
+      );
+  }, []);
 
   const inputClasses =
     'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm';
 
   return (
-    <form className="grid min-h-[320px] grid-cols-1 gap-y-4" method="POST" onSubmit={handleSendMessage}>
+    <form className="grid min-h-[320px] grid-cols-1 gap-y-4" method="POST" onSubmit={handleSendMessage} ref={form}>
       <input className={inputClasses} name="name" onChange={onChange} placeholder="Name" required type="text" />
       <input
         autoComplete="email"

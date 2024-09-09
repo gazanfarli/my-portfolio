@@ -28,7 +28,7 @@ import {
   SkillGroup,
   Social,
   TestimonialSection,
-  TimelineItem,
+  TTimelineItem,
 } from './dataDef';
 
 /**
@@ -62,15 +62,15 @@ export const heroData: Hero = {
   imageSrc: heroImage,
   name: `I'm Gazanfar Gazanfarli.`,
   description: (
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Baku based <strong className="text-stone-100">Front End Developer</strong>, currently working
-        at <strong className="text-stone-100">Algorithmics Global</strong> helping build a modern, mobile-first 
-        web applications
-      </p>
+    <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+      I'm a <strong className="text-stone-100">Software Engineer</strong>, currently working at{' '}
+      <strong className="text-stone-100">International Bank of Azerbaijan</strong> helping build a modern, mobile-first
+      web applications
+    </p>
   ),
   actions: [
     {
-      href: 'https://drive.google.com/file/d/1mI1vQX_eI19RYllDexztGz94O7bfKqN8/view?usp=sharing',
+      href: 'https://drive.google.com/file/d/1gKp-UNoqBeOUor9uJGdikO88Ucy4pmo0/view?usp=drive_link',
       text: 'Resume',
       primary: true,
       Icon: DownloadIcon,
@@ -90,12 +90,16 @@ export const aboutData: About = {
   profileImageSrc: 'https://i.postimg.cc/gJH2ZCQM/IMG-2320.jpg',
   description: `I am very passionate about my work. I like to learn new things and put my knowledge into use. And i will take every opportunity to improve myself. Looking for a place where i can share my skills and be able to grow in terms of learning and gaining experience. As for me, there is no end of learning.`,
   aboutItems: [
-    {label: 'Location', text: 'Baku, Azerbaijan', Icon: MapIcon},
-    {label: 'Age', text: '21', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Azerbaijani / Caucasian', Icon: FlagIcon},
-    {label: 'Interests', text: 'Fitness, Karate', Icon: SparklesIcon},
-    {label: 'Study', text: 'Azerbaijan State Oil and Industry University', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Algorithmics Global', Icon: OfficeBuildingIcon},
+    { label: 'Location', text: 'Baku, Azerbaijan', Icon: MapIcon },
+    { label: 'Age', text: '23', Icon: CalendarIcon },
+    { label: 'Nationality', text: 'Azerbaijani / Caucasian', Icon: FlagIcon },
+    { label: 'Interests', text: 'Fitness, Karate', Icon: SparklesIcon },
+    {
+      label: 'Study',
+      text: 'The Academy of Public Administration Under the President of the Republic of Azerbaijan',
+      Icon: AcademicCapIcon,
+    },
+    { label: 'Employment', text: 'International Bank of Azerbaijan', Icon: OfficeBuildingIcon },
   ],
 };
 
@@ -104,7 +108,7 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
+    name: 'Languages',
     skills: [
       {
         name: 'English',
@@ -124,7 +128,15 @@ export const skills: SkillGroup[] = [
     name: 'Frontend development',
     skills: [
       {
-        name: 'React',
+        name: 'HTML',
+        level: 9,
+      },
+      {
+        name: 'CSS',
+        level: 9,
+      },
+      {
+        name: 'Javascript',
         level: 9,
       },
       {
@@ -132,7 +144,39 @@ export const skills: SkillGroup[] = [
         level: 7,
       },
       {
+        name: 'React',
+        level: 9,
+      },
+      {
+        name: 'Chakra UI',
+        level: 9,
+      },
+      {
+        name: 'MUI',
+        level: 9,
+      },
+      {
+        name: 'Tailwind CSS',
+        level: 7,
+      },
+      {
         name: 'Redux Toolkit',
+        level: 7,
+      },
+      {
+        name: 'Zustand',
+        level: 7,
+      },
+      {
+        name: 'Babel',
+        level: 7,
+      },
+      {
+        name: 'Webpack',
+        level: 7,
+      },
+      {
+        name: 'Microfrontends (Module Federation)',
         level: 7,
       },
     ],
@@ -141,7 +185,11 @@ export const skills: SkillGroup[] = [
     name: 'Backend development',
     skills: [
       {
-        name: 'Node.js',
+        name: 'Node js',
+        level: 8,
+      },
+      {
+        name: 'Nest js',
         level: 8,
       },
       {
@@ -151,7 +199,7 @@ export const skills: SkillGroup[] = [
       {
         name: 'Spring Boot',
         level: 6,
-      }
+      },
     ],
   },
   {
@@ -160,7 +208,32 @@ export const skills: SkillGroup[] = [
       {
         name: 'React Native',
         level: 9,
-      }
+      },
+    ],
+  },
+  {
+    name: 'Other',
+    skills: [
+      {
+        name: 'Git',
+        level: 9,
+      },
+      {
+        name: 'Github',
+        level: 9,
+      },
+      {
+        name: 'PL/SQL',
+        level: 9,
+      },
+      {
+        name: 'PostgreSQL',
+        level: 9,
+      },
+      {
+        name: 'Postman',
+        level: 9,
+      },
     ],
   },
 ];
@@ -171,7 +244,7 @@ export const skills: SkillGroup[] = [
 export const portfolioItems: PortfolioItem[] = [
   {
     title: 'SpaceX Info',
-    description: 'Discover Space-X\'s groundbreaking rocket technology.',
+    description: "Discover Space-X's groundbreaking rocket technology.",
     url: 'https://spacexinfo-az.netlify.app/',
     image: porfolioImage1,
   },
@@ -195,27 +268,55 @@ export const portfolioItems: PortfolioItem[] = [
   },
 ];
 
-/**
- * Resume section -- TODO: Standardize resume contact format or offer MDX
- */
-export const education: TimelineItem[] = [
+export const education: TTimelineItem[] = [
   {
-    date: 'September 2022 - Ongoing',
+    date: 'September 2022 - July 2024',
     location: 'The Academy of Public Administration Under the President of the Respublic of Azerbaijan',
-    title: 'Mathematical and Information Security of Economic Activity',
-    content: <p>Ongoing</p>,
+    title: "Master's in Mathematical and Information Security of Economic Activity",
+    content: (
+      <p>
+        My focus during this Master's program has been on the intersection of information security and economics, where
+        I explored topics like cybersecurity policies, economic risk management in digital environments, cryptography,
+        and data protection strategies for secure economic activities. Additionally, I engaged in research projects
+        related to securing public administration infrastructures and optimizing network protection.
+      </p>
+    ),
   },
   {
-    date: 'September 2018 - January 2022',
+    date: 'September 2018 - July 2022',
     location: 'Azerbaijan State Oil and Industry University',
-    title: "BSc in Computer Engineering",
-    content: <p>What I learnt in Computer Science: artificial intelligence, computer systems and networks, security, database systems, human computer interaction, vision and graphics, numerical analysis, programming languages, software engineering and theory of computing.</p>,
+    title: "Bachelor's in Computer Engineering",
+    content: (
+      <p>
+        What I learnt in Computer Science: artificial intelligence, computer systems and networks, security, database
+        systems, human computer interaction, vision and graphics, numerical analysis, programming languages, software
+        engineering and theory of computing.
+      </p>
+    ),
   },
 ];
 
-export const experience: TimelineItem[] = [
+export const experience: TTimelineItem[] = [
   {
-    date: 'September 2022 - Present',
+    date: 'April 2023 - Present',
+    location: 'International Bank of Azerbaijan',
+    title: 'Software Engineer',
+    content: (
+      <div>
+        <p>- Led front-end development using React and Chakra UI, ensuring top-notch user experiences</p>
+        <p>
+          - Built Bank and Tax Orders, Bank Transfers, SMS Notification processes, improving customer interaction and
+          experience
+        </p>
+        <p>- Integrated Java microservices and implemented a Backend-for-Frontend (BFF) architecture</p>
+        <p>- Maintained code quality with SonarQube and Jest, optimizing performance</p>
+        <p>- Integrating data from various back-end services and databases</p>
+        <p>- Managed version control and collaboration with Git and Gitlub</p>
+      </div>
+    ),
+  },
+  {
+    date: 'September 2022 - January 2023',
     location: 'Algorithmics Global',
     title: 'Web Developer',
     content: (
@@ -271,7 +372,6 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
   items: [
     {
       type: ContactType.Email,
@@ -300,8 +400,8 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/gazanfarli'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/gazanfar-gazanfarli-a843021aa/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/qezenferlee/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/qznfr14'},
+  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/gazanfarli' },
+  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/gazanfar-gazanfarli/' },
+  { label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/qezenferlee/' },
+  { label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/qznfr14' },
 ];
