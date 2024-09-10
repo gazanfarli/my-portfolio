@@ -1,5 +1,5 @@
 
-### View a [live demo here.](https://gazanfarli.vercel.app/)
+### View a [live demo here.](https://gazanfarli.com/)
 
 1. Completely rebuilt with React and full typescript support
 2. Built on the [Next.js](https://nextjs.org/) framework for easy server side rendering/static generation, image optimization, api routes, and deployment
