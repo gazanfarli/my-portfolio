@@ -60,17 +60,17 @@ export type SectionId = typeof SectionId[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Gazanfar Gazanfarli.`,
+  name: `I'm Gazanfar.`,
   description: (
     <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-      I'm a <strong className="text-stone-100">Software Engineer</strong>, currently working at{' '}
+      I'm a <strong className="text-stone-100">Software Engineer</strong>, currently working at&nbsp;
       <strong className="text-stone-100">International Bank of Azerbaijan</strong> helping build a modern, mobile-first
       web applications
     </p>
   ),
   actions: [
     {
-      href: 'https://drive.google.com/file/d/1gKp-UNoqBeOUor9uJGdikO88Ucy4pmo0/view?usp=drive_link',
+      href: 'https://docs.google.com/document/d/18UCEWcYs3CPBxEYngDe_6wgkYs5Q_RqF/edit?usp=sharing&ouid=100359122208133355899&rtpof=true&sd=true',
       text: 'Resume',
       primary: true,
       Icon: DownloadIcon,
@@ -270,7 +270,6 @@ export const portfolioItems: PortfolioItem[] = [
 
 export const education: TTimelineItem[] = [
   {
-    date: 'September 2022 - July 2024',
     location: 'The Academy of Public Administration Under the President of the Respublic of Azerbaijan',
     title: "Master's in Mathematical and Information Security of Economic Activity",
     content: (
@@ -283,7 +282,6 @@ export const education: TTimelineItem[] = [
     ),
   },
   {
-    date: 'September 2018 - July 2022',
     location: 'Azerbaijan State Oil and Industry University',
     title: "Bachelor's in Computer Engineering",
     content: (
@@ -316,7 +314,7 @@ export const experience: TTimelineItem[] = [
     ),
   },
   {
-    date: 'September 2022 - January 2023',
+    date: 'September 2022 - March 2023',
     location: 'Algorithmics Global',
     title: 'Web Developer',
     content: (
@@ -375,8 +373,8 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: 'qznfrli.2001@gmail.com',
-      href: 'mailto:qznfrli.2001@gmail.com',
+      text: 'gazanfarli.dev@gmail.com',
+      href: 'mailto:gazanfarli.dev@gmail.com',
     },
     {
       type: ContactType.Location,
